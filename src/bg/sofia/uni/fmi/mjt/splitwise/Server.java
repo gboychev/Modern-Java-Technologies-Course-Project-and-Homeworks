@@ -31,9 +31,7 @@ public class Server implements Runnable {
     public void run() {
         try (ServerSocketChannel serverSocketChannel = ServerSocketChannel.open()) {
             selector = Selector.open();
-
             configureServerSocketChannel(serverSocketChannel, selector);
-
             this.buffer = ByteBuffer.allocate(BUFFER_SIZE);
             isServerWorking = true;
             while (isServerWorking) {
@@ -94,7 +92,6 @@ public class Server implements Runnable {
             clientChannel.close();
             return null;
         }
-
 
         byte b = '\n';
         buffer.put(b);

@@ -123,7 +123,6 @@ class ServerCommandExecutorTest {
         command[2] = "1";
         String response = serverCommandExecutor.execute(command);
         assertEquals("Successfully logged in as user u1.", response);
-
         String[] command2 = new String[3];
         command2[0] = "split-group";
         command2[1] = "10 gg mn ste gotini";
